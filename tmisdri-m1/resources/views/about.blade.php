@@ -18,54 +18,20 @@
 <section class="catalog about-catalog">
     <div class="container">
         <h2 class="title">Новинки!</h2>
-        <div class="catalog-items">
+        <div class="catalog-items ">
+            @foreach ($product as $prod)
             <div class="catalog-item card">
                 <div class="pic-box">
-                    <img src="/public/img/xbox.jpg" alt="" class="img-fliud">
+                    <img src="/public/img/{{$prod -> photo}}" alt="" class="img-fliud">
                 </div>
                 <div class="text-box">
-                    <p class="card-title">Xbox series s</p>
-                    <p class="price">25000 руб.</p>
+                    <p class="card-title mb-3">{{$prod -> title}}</p>
+                    <p class="price">{{$prod -> price}} руб.</p>
                 </div>
             </div>
-            <div class="catalog-item card">
-                <div class="pic-box">
-                    <img src="/public/img/ps6.jpg" alt="" class="img-fliud">
-                </div>
-                <div class="text-box">
-                    <p class="card-title">Xbox series s</p>
-                    <p class="price">25000 руб.</p>
-                </div>
-            </div>
-            <div class="catalog-item card">
-                <div class="pic-box">
-                    <img src="/public/img/battlefield.jpg" alt="" class="img-fliud">
-                </div>
-                <div class="text-box">
-                    <p class="card-title">Xbox series s</p>
-                    <p class="price">25000 руб.</p>
-                </div>
-            </div>
-            <div class="catalog-item card">
-                <div class="pic-box">
-                    <img src="/public/img/nintendo.jpg" alt="" class="img-fliud">
-                </div>
-                <div class="text-box">
-                    <p class="card-title">Xbox series s</p>
-                    <p class="price">25000 руб.</p>
-                </div>
-            </div>
-            <div class="catalog-item card">
-                <div class="pic-box">
-                    <img src="/public/img/5hq.png" alt="" class="img-fliud">
-                </div>
-                <div class="text-box">
-                    <p class="card-title">Xbox series s</p>
-                    <p class="price">25000 руб.</p>
-                </div>
-            </div>
-
+            @endforeach
         </div>
+
     </div>
 </section>
 

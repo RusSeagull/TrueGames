@@ -11,6 +11,11 @@ class ProductController extends Controller
         return view('home/catalog', ["product" => $i]);
     }
 
+    public function main() {
+        $i = \App\Models\Product::Where('id', '>', 0)->limit(5) -> get();
+        return view('/about', ["product" => $i]);
+    }
+
     public function addtocart($id) {
         $product = \App\Models\Product::find($id);
         $bufferif = \App\Models\Cart::Where('product_id', "=", $id) -> get();

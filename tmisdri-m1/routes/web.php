@@ -21,9 +21,10 @@ Route::get('/contact', function () {
 });
 
 Auth::routes();
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', function () {return redirect('/');})->name('home');
 Route::get('/admin', [App\Http\Controllers\MainControleer::class, 'index'])->name('admin');
 
+Route::get('/', [App\Http\Controllers\ProductController::class,'main']);
 Route::get('/catalog', [App\Http\Controllers\ProductController::class,'index']);
 Route::get('/addtocart/{id}', [App\Http\Controllers\ProductController::class,'addtocart']);
 Route::get('/cart', [App\Http\Controllers\ProductController::class,'cart']);

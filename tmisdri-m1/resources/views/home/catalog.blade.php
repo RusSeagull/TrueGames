@@ -42,7 +42,13 @@
                 @if (Auth::user())
                     <a href="/public/addtocart/{{$prod -> id}}" class="btn main-btn">Купить</a>
                 @else
-                <h1>Авторизуйтесь</h1>
+                <h1 class="no-auth">
+                    @if (Route::has('login'))
+                    <li class="nav-item">
+                        <a class="nav-link filter-link" href="{{ route('login') }}">Авторизоваться</a>
+                    </li>
+                @endif
+                </h1>
                 @endif
             </div>
             @endforeach
@@ -51,5 +57,3 @@
 </section>
 
 @endsection
-
-
